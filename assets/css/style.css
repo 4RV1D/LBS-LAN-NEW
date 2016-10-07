@@ -1,0 +1,397 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Roboto:300,400,500,700';
+body {
+  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
+  background: url('../img/background-login.png');
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-color: #2E3B4B;
+}
+body #register-body {
+  height: 100vh;
+  margin: 0 auto;
+}
+body #register-body .more-info {
+  color: #e3e3e3;
+  font-size: 25px;
+  text-align: center;
+  padding: 10px 10px 5px 10px;
+  margin: 15px;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+body #register-body .more-info p {
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+#register {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.4);
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.35);
+  width: 960px;
+  min-width: 960px;
+  display: flex;
+  justify-content: center;
+}
+#register .register-click {
+  cursor: pointer;
+}
+#register .image {
+  background: url('../img/dreamhack.jpg');
+  background-position: center;
+  background-size: cover;
+  width: 400px;
+  min-width: 400px;
+  color: #e3e3e3;
+  text-align: center;
+  font-size: 130%;
+  overflow: hidden;
+  box-shadow: 5px 0px 10px 0px rgba(0, 0, 0, 0.25);
+}
+#register .image .image-overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  vertical-align: middle;
+}
+#register .image h1 {
+  position: relative;
+  top: 50%;
+  padding: 0px;
+  margin: 0px;
+  margin-top: -40px;
+}
+#register .image h3 {
+  position: relative;
+  top: 50%;
+  font-weight: 400;
+  margin: 0px;
+}
+#register #login-form {
+  width: 480px;
+  min-width: 480px;
+  padding: 125px 50px 125px 50px;
+  color: #e3e3e3;
+}
+#register #login-form h1 {
+  margin-top: 0px;
+}
+#register #login-form h2 {
+  float: right;
+  font-weight: 200;
+  margin: 0px;
+}
+#register #login-form a {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: all 0.35s ease-in-out;
+}
+#register #login-form a:hover {
+  opacity: 1;
+}
+#register #login-form h3 {
+  font-weight: 400;
+  color: #FF7161;
+}
+#register #login-form .field {
+  border-bottom: 1px solid #888;
+  margin-top: 35px;
+  font-size: 25px;
+}
+#register #login-form .field .fa {
+  margin: 10px;
+}
+#register #login-form .field input,
+#register #login-form .field input:focus {
+  color: #fff;
+  font-size: 21px;
+  width: 85%;
+  border: 0px;
+  background: rgba(0, 0, 0, 0);
+  outline-offset: 0px;
+  outline-style: none;
+}
+#register #login-form .field:hover {
+  border-bottom: 1px solid #fff;
+  transition: all 0.3s ease-in-out;
+}
+#register #login-form .button {
+  margin-top: 35px;
+  border: 0px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #888;
+  width: 100%;
+  padding: 15px;
+  font-size: 21px;
+  transition: all 0.5s ease-in-out;
+}
+#register #login-form .button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.25);
+}
+#register #register-form {
+  width: 480px;
+  min-width: 480px;
+  padding: 50px 50px 50px 50px;
+  color: #e3e3e3;
+}
+#register #register-form h1 {
+  margin-top: 0px;
+}
+#register #register-form h2 {
+  float: right;
+  font-weight: 200;
+  margin: 0px;
+}
+#register #register-form h3 {
+  font-weight: 400;
+  color: #FF7161;
+}
+#register #register-form a {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.35s ease-in-out;
+}
+#register #register-form a:hover {
+  opacity: 1;
+}
+#register #register-form .login-click {
+  cursor: pointer;
+}
+#register #register-form .field {
+  border-bottom: 1px solid #888;
+  margin-top: 35px;
+  font-size: 21px;
+}
+#register #register-form .field .fa {
+  margin: 10px;
+}
+#register #register-form .field input,
+#register #register-form .field input:focus {
+  color: #fff;
+  font-size: 18px;
+  width: 85%;
+  border: 0px;
+  background: rgba(0, 0, 0, 0);
+  outline-offset: 0px;
+  outline-style: none;
+}
+#register #register-form .field:hover {
+  border-bottom: 1px solid #fff;
+  transition: all 0.3s ease-in-out;
+}
+#register #register-form .button {
+  margin-top: 35px;
+  border: 0px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #888;
+  width: 100%;
+  padding: 15px;
+  font-size: 21px;
+  transition: all 0.5s ease-in-out;
+}
+#register #register-form .button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.25);
+}
+#info {
+  padding-top: 100px;
+  margin: 0 auto;
+  color: #e3e3e3;
+  display: flex;
+  flex-direction: row;
+}
+#info .info-container {
+  margin: 0 auto;
+  width: 1024px;
+}
+#info .info-content {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 25px;
+  margin: 25px;
+  max-width: 425px;
+}
+#info .info-content li {
+  margin: 5px;
+}
+nav {
+  margin: 0 auto;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 250px;
+  height: 100vh;
+}
+nav h1 {
+  font-size: 40px;
+  margin-top: 25px;
+  color: #e3e3e3;
+}
+nav img {
+  margin-top: 50px;
+  width: 150px;
+  opacity: 0.7;
+  transition: opacity 0.35s ease-in-out;
+}
+nav img:hover {
+  opacity: 1;
+}
+nav ul {
+  list-style: none;
+  padding: 15px;
+}
+nav ul li {
+  padding: 10px;
+  text-align: center;
+}
+nav ul li a {
+  font-size: 19px;
+  color: #e3e3e3;
+  text-decoration: none;
+  margin: 7px;
+  opacity: 0.7;
+  transition: all 0.35s ease-in-out;
+}
+nav ul li a:hover {
+  color: #fff;
+  opacity: 1;
+}
+#home {
+  margin: 0 auto;
+  background: #2F3C4C;
+  color: #e3e3e3;
+}
+#home .container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+#home .container .inner {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 50px;
+  text-align: center;
+}
+#home .container .inner h1 {
+  font-size: 60px;
+  margin: 0px;
+}
+#home .container .inner h2 {
+  margin: 0px;
+}
+#home .container .inner h3 {
+  margin: 0px;
+}
+#boka {
+  transition: width 0.5s ease-in-out, height 0.5s ease-in-out, background 0.5s ease-in-out;
+  margin: 0 auto;
+  background: #2F3C4C;
+  color: #e3e3e3;
+}
+#boka .container {
+  background: #2F3C4C;
+  margin: 0 auto;
+  min-width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+#boka .container .inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  background: rgba(0, 0, 0, 0.4);
+  padding: 50px;
+  max-width: 1024px;
+}
+#boka .container .inner .turnerings-rum {
+  background: rgba(0, 0, 0, 0.2);
+  width: 250px;
+  height: 350px;
+  float: left;
+  margin: 25px;
+  text-align: center;
+}
+#boka .container .inner .platskarta {
+  list-style: none;
+  float: left;
+  margin: 5px;
+  margin-top: 35px;
+  padding: 0px;
+}
+#boka .container .inner .platskarta li {
+  width: 25px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  transition: background 0.4 ease-in-out;
+}
+#boka .container .inner .platskarta li a {
+  color: #e3e3e3;
+  text-decoration: none;
+  transition: color 0.4 ease-in-out;
+}
+#boka .container .inner .platskarta li a:hover {
+  color: #fff;
+}
+#boka .container .inner .platskarta li:hover {
+  background: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+#boka .container .inner form {
+  text-align: center;
+}
+#boka .container .inner form .button {
+  margin-top: 35px;
+  border: 0px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #888;
+  width: 50%;
+  padding: 12px;
+  font-size: 18px;
+  transition: all 0.5s ease-in-out;
+}
+#boka .container .inner form .button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.25);
+}
+#turnering .container {
+  background: #2F3C4C;
+  color: #e3e3e3;
+  margin: 0 auto;
+  min-width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+#turnering .container .inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  background: rgba(0, 0, 0, 0.4);
+  padding: 50px;
+  max-width: 1024px;
+}
