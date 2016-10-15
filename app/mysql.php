@@ -1,8 +1,8 @@
 <?php
 
-   $servername = "192.81.220.30";
-   $username = "lbs";
-   $password = "LBS!lan123";
+   $servername = "localhost";
+   $username = "root";
+   $password = "";
    $dbname = "lbs_lan";
 
    // Create connection
