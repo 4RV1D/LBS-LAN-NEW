@@ -1,5 +1,8 @@
 <?php
 
+@session_start();
+include "../app/autoload.php";
+
 if (isset($_POST['register'])) {
 
   $Name       = $_POST['name'];

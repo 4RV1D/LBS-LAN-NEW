@@ -310,6 +310,8 @@ nav {
     min-height: 100%;
     overflow-x: hidden;
     overflow-y: scroll;
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
 
     .inner {
       position: absolute;
@@ -322,11 +324,23 @@ nav {
 
       .turnerings-rum {
         background: rgba(0, 0, 0, 0.2);
-        width: 250px;
-        height: 350px;
-        float: left;
+        width: 300px;
+        height: 170px;
+        float: right;
         margin: 25px;
         text-align: center;
+      }
+
+      .sal-B {
+        float: left;
+      }
+      .sal-A {
+        display: flex;
+        justify-content: center;
+      }
+      .sal-info {
+        text-align: center;
+        padding: 10px;
       }
 
       .platskarta {
@@ -335,6 +349,8 @@ nav {
         margin: 5px;
         margin-top: 35px;
         padding: 0px;
+
+        .taken {color: #FF7161;}
 
         li {
           width: 25px;
@@ -355,7 +371,6 @@ nav {
         text-align: center;
 
         .button {
-          margin-top: 35px;
           border: 0px;
           background: rgba(255, 255, 255, 0.1);
           color: #888;
@@ -372,6 +387,8 @@ nav {
           box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.25);
         }
       }
+
+      .seat-info {text-align: center;}
     }
 
     @media only screen and (max-width: 768px) {
@@ -382,6 +399,52 @@ nav {
 }
 
 #turnering {
+
+  .container {
+    background: #2F3C4C;
+    color: #e3e3e3;
+    margin: 0 auto;
+    min-width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    .inner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%,-50%,0);
+      background: rgba(0, 0, 0, 0.4);
+      padding: 50px;
+      max-width: 1024px;
+    }
+  }
+}
+
+#profile {
+
+  .container {
+    background: #2F3C4C;
+    color: #e3e3e3;
+    margin: 0 auto;
+    min-width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    .inner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%,-50%,0);
+      background: rgba(0, 0, 0, 0.4);
+      padding: 50px;
+      max-width: 1024px;
+    }
+  }
+}
+
+#info {
 
   .container {
     background: #2F3C4C;

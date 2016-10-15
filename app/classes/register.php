@@ -34,7 +34,7 @@ class Register {
   function createUser($Name, $Username, $Password, $Email) {
 
     // Include MYSQL for SQL command.
-    include "/../mysql.php";
+    include __DIR__."/../mysql.php";
 
     //Check if the user already exists
     $sql = "SELECT Username FROM users WHERE Username='$Username'";
@@ -71,7 +71,7 @@ class Register {
   function loginUser($Password, $Username) {
 
     // Include MYSQL for SQL command.
-    include "/../mysql.php";
+    include __DIR__."/../mysql.php";
 
     $Username_NoHTML = htmlspecialchars($Username, ENT_QUOTES, 'UTF-8');
 
@@ -86,7 +86,7 @@ class Register {
           $_SESSION['logged-in'] = $row["USERid"];
 
           $_SESSION['register-success'] = "<p class='header_popup'>Du har Registrerat dig som " . $Username_NoHTML . "!</p>";
-          header("Location: ../home/home?page=home");
+          header("Location: ../home/?page=home");
         }
 
       }

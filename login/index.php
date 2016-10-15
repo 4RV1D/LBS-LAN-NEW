@@ -1,13 +1,11 @@
 <?php
 
-@session_start();
-include "../app/autoload.php";
-
 ?>
 
 <!DOCTYPE html>
 <html>
    <head>
+      <link rel="icon" href="../assets/img/favicon.ico" sizes="32x32" type="icon">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="../assets/css/style.css" media="screen">
       <meta charset="utf-8">
@@ -25,19 +23,19 @@ include "../app/autoload.php";
 
         <?php
 
-        if (isset($_GET['page'])) {
-          $page = $_GET['page'];
+          if (isset($_GET['page'])) {
+            $page = $_GET['page'];
 
-          if($page == "login") {
+            if($page == "login") {
+              include "login.php";
+            }
+
+            if($page == "register") {
+              include "register.php";
+            }
+          } else {
             include "login.php";
           }
-
-          if($page == "register") {
-            include "register.php";
-          }
-        } else {
-          include "login.php";
-        }
 
         ?>
 

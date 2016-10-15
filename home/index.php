@@ -10,12 +10,15 @@
   <body>
     <?php
 
+      @session_start();
+      include "../app/autoload.php";
+      include "nav.php";
+
       if (isset($_GET['page'])) {
         $page = $_GET['page'];
 
         if($page == "boka") {
           include "boka.php";
-          unset($page);
           die();
         }
 

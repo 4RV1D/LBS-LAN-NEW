@@ -1,5 +1,8 @@
 <?php
 
+@session_start();
+include "../app/autoload.php";
+
 if (isset($_POST['login'])) {
 
   $Username   = $_POST['username'];
@@ -15,7 +18,7 @@ if (isset($_POST['login'])) {
 
 ?>
 
-<form id="login-form" class="form" action="index.php" method="POST" autocomplete="off">
+<form id="login-form" class="form" action="?page=login" method="POST" autocomplete="off">
   <h2><a href="?page=register">Registrera dig</a></h2>
   <h1>Logga In</h1>
   <br>

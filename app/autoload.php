@@ -7,6 +7,7 @@
   include "classes/profile.php";
   include "classes/register.php";
   include "classes/tournament.php";
+  include "classes/admin.php";
 
   // MySQL
   include "mysql.php";

@@ -4,96 +4,104 @@
  */
 class Placing {
 
-  function alreadyBoked($USERid) {
+  function reservation() {
 
-    include "mysql.php";
+    include __DIR__."/../mysql.php";
 
-    $sql = "SELECT TableNum FROM users WHERE USERid = '$USERid'";
+  	$sql = "SELECT TableNum FROM users";
   	$result = $conn->query($sql);
 
-  	if ($result->num_rows > 0) {
-      while ($row = $result->fetch_assoc()) {
+    if ($result->num_rows > 0) {
+
+      $booked = array();
+
+      while($row = $result->fetch_assoc()) {
         if ($row['TableNum'] != "0") {
-          echo "
-            <i class='fa fa-times' aria-hidden='true'></i><a class='button' href='cancel-boking'>Avboka</a>
-            <i class='fa fa-arrows' aria-hidden='true'></i><a class='button' href='move-seat'>Flytta</a>
-          ";
-        } else {
-          echo "<i class='fa fa-check-circle-o' aria-hidden='true'></i><a class='button' href='order'>Boka</a>";
+          array_push($booked, $row['TableNum']);
         }
       }
     }
+    return $booked;
   }
 
-  function placing($seat) {
-
-    include "mysql.php";
-
-  	$sql = "SELECT TableNum FROM users WHERE TableNum = '$seat'";
-  	$result = $conn->query($sql);
-
-  	if ($result->num_rows > 0) {
-
-  		return "<p class='taken'>$seat</p>";
-
-  	} else {
-  		return "<p>$seat</p>";
-  	}
-  }
-
-  function placing_order($seat) {
-
-    include "mysql.php";
-
-  	$sql = "SELECT TableNum FROM users WHERE TableNum = '$seat'";
-  	$result = $conn->query($sql);
-
-  	if ($result->num_rows > 0) {
-
-  		return "<p class='taken_order'>$seat</p>";
-
-  	} else {
-  		return "<input type='radio' name='seat' value='$seat'/><p>$seat</p>";
-  	}
-  }
-
-  function order($USERid, $OrderSeat) {
-
-    include "mysql.php";
-
-    $sql = "UPDATE users SET TableNum = '$OrderSeat' WHERE USERid = '$USERid'";
-
-    if ($conn->query($sql) === TRUE) {
-        $_SESSION['order-success'] = "<h3 class='header_popup'>Du har bokat plats " . $OrderSeat . "</h3>";
-        header("Location: placing");
+  function is_reserved($booked, $seat) {
+    if (in_array($seat, $booked)) {
+      return "<a class='taken' href='?page=boka&plats=" . $seat . "'>" . $seat . "</a>";
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+      return "<a href='?page=boka&plats=" . $seat . "'>" . $seat . "</a>";
     }
   }
 
-  function move($USERid, $OrderSeat) {
-    include "mysql.php";
-
-    $sql = "UPDATE users SET TableNum = '$OrderSeat' WHERE USERid = '$USERid'";
-
-    if ($conn->query($sql) === TRUE) {
-        $_SESSION['order-success'] = "<h3 class='header_popup'>Du har bokat plats " . $OrderSeat . "</h3>";
-        header("Location: placing");
+  function is_reserved_bool($booked, $seat) {
+    if (in_array($seat, $booked)) {
+      return true;
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+      return false;
     }
   }
 
-  function cancel($USERid) {
-    include "mysql.php";
+  function get_seatinfo($seat) {
 
-    $sql = "UPDATE users SET TableNum='' WHERE USERid = '$USERid'";
+    include __DIR__."/../mysql.php";
+
+  	$sql = "SELECT Name, Username FROM users WHERE TableNum='$seat'";
+  	$result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+      while($row = $result->fetch_assoc()) {
+        return "<p>" . $row['Username'] . "<br/>" . $row['Name'] . "</p>";
+      }
+    } else {
+      return "User not found.";
+    }
+  }
+
+  function is_yourseat($USERid, $seat) {
+
+    include __DIR__."/../mysql.php";
+
+    $sql = "SELECT TableNum FROM users WHERE USERid='$USERid'";
+  	$result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+      while($row = $result->fetch_assoc()) {
+
+        if ($row['TableNum'] == $seat) {
+          return true;
+        } else {
+          return false;
+        }
+
+      }
+    } else {
+      return "User not found.";
+    }
+  }
+
+  function reserve($USERid, $seat) {
+
+    include __DIR__."/../mysql.php";
+
+    $sql = "UPDATE users SET TableNum='$seat' WHERE USERid='$USERid'";
 
     if ($conn->query($sql) === TRUE) {
-      $_SESSION['order-success'] = "<h3 class='header_popup'>Du har avbokat din plats</h3>";
-      header("Location: placing");
+        $_SESSION['reserve-success'] = "<p>Du har bokat plats " . $seat . "</p>";
+        header("Location: ?page=boka&plats=" . $seat . "");
     } else {
-      echo "Error deleting record: " . $conn->error;
+        echo "Error: Din user finns inte.";
+    }
+  }
+
+  function cancel($USERid, $seat) {
+    include __DIR__."/../mysql.php";
+
+    $sql = "UPDATE users SET TableNum='0' WHERE USERid = '$USERid'";
+
+    if ($conn->query($sql) === TRUE) {
+      $_SESSION['cancel-success'] = "<p>Du har avbokat plats" . $seat . "</p>";
+      header("Location: ?page=boka&plats=" . $seat . "");
+    } else {
+      echo "Error: Din plats finns inte!";
     }
   }
 }
