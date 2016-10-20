@@ -12,14 +12,14 @@ class Tournament {
     if ($GameID == "3") {$Game = "Hearthstone";}
 
     // Include MYSQL for SQL command.
-    include "mysql.php";
+    include __DIR__."/../mysql.php";
 
-    $sql = "INSERT INTO tournaments (Game, USERid)
+    $sql = "INSERT INTO tournament (Game, USERid)
             VALUES ('$GameID', '$USERid')";
 
     if ($conn->query($sql) === TRUE) {
         $_SESSION['tournament-success'] = "<h2 class='header_popup'>Du har gått med i " . $Game . " turneringen.</h2><br>";
-        header("Location: tournament");
+        header("Location: ?page=turnering");
     } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
     }
@@ -33,13 +33,13 @@ class Tournament {
     if ($GameID == "3") {$Game = "Hearthstone";}
 
     // Include MYSQL for SQL command.
-    include "mysql.php";
+    include __DIR__."/../mysql.php";
 
-    $sql = "DELETE FROM tournaments WHERE Game='$GameID' AND USERid='$USERid'";
+    $sql = "DELETE FROM	tournament WHERE Game='$GameID' AND USERid='$USERid'";
 
     if ($conn->query($sql) === TRUE) {
-        $_SESSION['tournament-success'] = "<h2 class='header_popup'>Du har gått ur " . $Game . " turneringen.</h2><br>";
-        header("Location: tournament");
+      $_SESSION['tournament-success'] = "<h2 class='header_popup'>Du har gått ur " . $Game . " turneringen.</h2><br>";
+      header("Location: ?page=turnering");
     } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
     }
@@ -47,20 +47,16 @@ class Tournament {
 
   function already_signup($USERid, $id) {
 
-    include "mysql.php";
+    include __DIR__."/../mysql.php";
 
-    $sql = "SELECT Game, USERid FROM tournaments WHERE Game='$id' AND USERid='$USERid'";
+    $sql = "SELECT Game, USERid FROM tournament WHERE Game='$id' AND USERid='$USERid'";
+    $result = $conn->query($sql);
 
-    if ($result = mysqli_query($conn,$sql)) {
-      $rowcount = mysqli_num_rows($result);
-
-      if ($rowcount != "1") {
-
-        return "<a class='button' href='tournament-signup?gameid=" . $id . "'>Delta</a>";
-
-      } else {
-        return "<a class='button' href='tournament-cancel?gameid=" . $id . "'>Gå ur Turnering</a>";
-      }
+    if ($result->num_rows != "1") {
+        return "<div class='button'><a href='?page=turnering&gameid=" . $id . "'>Delta</a></div>";
+    } else {
+        return "<div class='button'><a href='?page=turnering&gameid=" . $id . "&cancel=1'>Gå ur Turnering</a></div>";
     }
+
   }
 }

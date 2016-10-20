@@ -11,6 +11,11 @@
     <?php
 
       @session_start();
+
+      if (!isset($_SESSION['logged-in'])) {
+        header("Location: ../login/");
+      }
+
       include "../app/autoload.php";
       include "nav.php";
 

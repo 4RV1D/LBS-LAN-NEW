@@ -1,12 +1,8 @@
 <?php
 
-@session_start();
-include "../app/autoload.php";
-
-$Placing = new Placing("0");
-$booked = $Placing->reservation();
-$USERid = $_SESSION['logged-in'];
-
+  $Placing = new Placing("0");
+  $booked = $Placing->reservation();
+  $USERid = $_SESSION['logged-in'];
 
 ?>
 

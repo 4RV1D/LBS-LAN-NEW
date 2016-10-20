@@ -404,14 +404,58 @@ nav ul li a:hover {
   overflow-x: hidden;
   overflow-y: scroll;
 }
+#turnering .container h1 {
+  margin: 0px;
+  padding: 0px;
+}
 #turnering .container .inner {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate3d(-50%, -50%, 0);
   background: rgba(0, 0, 0, 0.4);
-  padding: 50px;
+  padding: 20px;
   max-width: 1024px;
+}
+#turnering .container .inner .center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#turnering .container .inner .tournament_div {
+  background: rgba(0, 0, 0, 0.25);
+  padding: 15px;
+  margin: 10px;
+  max-width: 1024px;
+  min-width: 700px;
+}
+#turnering .container .inner .tournament_div .tour_img {
+  float: left;
+  margin-right: 30px;
+}
+#turnering .container .inner .tournament_div .tour_img img {
+  width: 200px;
+}
+#turnering .container .inner .tournament_div .button {
+  border: 0px;
+  background: rgba(255, 255, 255, 0.1);
+  width: 50%;
+  padding: 12px;
+  font-size: 18px;
+  transition: all 0.5s ease-in-out;
+  text-align: center;
+}
+#turnering .container .inner .tournament_div .button a {
+  text-decoration: none;
+  color: #888;
+}
+#turnering .container .inner .tournament_div .button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.25);
+}
+#turnering .container .inner .tournament_div .button:hover a {
+  color: #fff;
 }
 #profile .container {
   background: #2F3C4C;
@@ -431,7 +475,7 @@ nav ul li a:hover {
   padding: 50px;
   max-width: 1024px;
 }
-#info .container {
+#infopage .container {
   background: #2F3C4C;
   color: #e3e3e3;
   margin: 0 auto;
@@ -440,7 +484,7 @@ nav ul li a:hover {
   overflow-x: hidden;
   overflow-y: scroll;
 }
-#info .container .inner {
+#infopage .container .inner {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -448,4 +492,30 @@ nav ul li a:hover {
   background: rgba(0, 0, 0, 0.4);
   padding: 50px;
   max-width: 1024px;
+}
+#infopage .container .info-container {
+  margin: 0 auto;
+  width: 1024px;
+}
+#infopage .container .info-content {
+  padding: 25px;
+  margin: 25px;
+  max-width: 425px;
+}
+#infopage .container .info-content li {
+  margin: 5px;
+}
+#admin {
+  margin: 0 auto;
+  padding: 3% 12% 3% 12%;
+  background: #202020;
+  color: #e3e3e3;
+}
+#admin .users table tr th {
+  padding: 10px;
+  text-align: left;
+}
+#admin .users table tr td {
+  padding: 10px;
+  border-right: 1px solid #e3e3e3;
 }
