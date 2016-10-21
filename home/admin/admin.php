@@ -40,5 +40,41 @@
 
     <br><hr><br>
 
+    <div class="users">
+      <h1>Anmälda Till CSGO 1v1</h1>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Game</th>
+        </tr>
+        <?php echo $Admin->tournament_csgo(); ?>
+      </table>
+    </div>
+
+    <div class="users">
+      <h1>Anmälda Till LoL 1v1</h1>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Game</th>
+        </tr>
+        <?php echo $Admin->tournament_lol(); ?>
+      </table>
+    </div>
+
+    <div class="users">
+      <h1>Anmälda Till Hearthstone 1v1</h1>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Game</th>
+        </tr>
+        <?php echo $Admin->tournament_hs(); ?>
+      </table>
+    </div>
+
   </body>
 </html>

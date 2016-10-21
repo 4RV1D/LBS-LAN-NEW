@@ -82,6 +82,108 @@ class Admin {
     echo $rows[0];
   }
 
+  function tournament_csgo() {
+
+    include __DIR__."/../mysql.php";
+
+    $sql = "SELECT users.USERid, users.Name, users.Username, tournament.Game, tournament.USERid
+    FROM users
+    RIGHT JOIN tournament
+    ON  users.USERid = tournament.USERid
+    WHERE tournament.Game=2";
+
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+      while ($row = $result->fetch_assoc()) {
+
+        $Game = "Default";
+        if ($row['Game'] == "1") {$Game = "League Of Legends";}
+        if ($row['Game'] == "2") {$Game = "CSGO";}
+        if ($row['Game'] == "3") {$Game = "Hearthstone";}
+
+        echo "
+        <tr>
+          <td>" . $row['Name'] . "</td>
+          <td>" . $row['Username'] . "</td>
+          <td>" . $Game . "</td>
+        </tr>
+        ";
+
+      }
+    } else {
+      echo "Fuck.. Error, RIP";
+    }
+  }
+
+  function tournament_lol() {
+
+    include __DIR__."/../mysql.php";
+
+    $sql = "SELECT users.USERid, users.Name, users.Username, tournament.Game, tournament.USERid
+    FROM users
+    RIGHT JOIN tournament
+    ON  users.USERid = tournament.USERid
+    WHERE tournament.Game=1";
+
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+      while ($row = $result->fetch_assoc()) {
+
+        $Game = "Default";
+        if ($row['Game'] == "1") {$Game = "League Of Legends";}
+        if ($row['Game'] == "2") {$Game = "CSGO";}
+        if ($row['Game'] == "3") {$Game = "Hearthstone";}
+
+        echo "
+        <tr>
+          <td>" . $row['Name'] . "</td>
+          <td>" . $row['Username'] . "</td>
+          <td>" . $Game . "</td>
+        </tr>
+        ";
+
+      }
+    } else {
+      echo "Fuck.. Error, RIP";
+    }
+  }
+
+  function tournament_hs() {
+
+    include __DIR__."/../mysql.php";
+
+    $sql = "SELECT users.USERid, users.Name, users.Username, tournament.Game, tournament.USERid
+    FROM users
+    RIGHT JOIN tournament
+    ON  users.USERid = tournament.USERid
+    WHERE tournament.Game=3";
+
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+      while ($row = $result->fetch_assoc()) {
+
+        $Game = "Default";
+        if ($row['Game'] == "1") {$Game = "League Of Legends";}
+        if ($row['Game'] == "2") {$Game = "CSGO";}
+        if ($row['Game'] == "3") {$Game = "Hearthstone";}
+
+        echo "
+        <tr>
+          <td>" . $row['Name'] . "</td>
+          <td>" . $row['Username'] . "</td>
+          <td>" . $Game . "</td>
+        </tr>
+        ";
+
+      }
+    } else {
+      echo "Fuck.. Error, RIP";
+    }
+  }
+
 }
 
 

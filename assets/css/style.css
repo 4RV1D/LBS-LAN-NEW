@@ -29,6 +29,23 @@ body #register-body .more-info p {
   margin: 0;
   padding: 0;
 }
+body #register-body .sponsors {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 35px;
+  width: 1024px;
+  height: 100px;
+  margin: 0 auto;
+}
+body #register-body .sponsors .image {
+  width: 150px;
+  margin: 15px;
+}
+body #register-body .sponsors .image img {
+  width: 150px;
+}
 #register {
   position: absolute;
   top: 50%;
@@ -301,6 +318,24 @@ nav ul li a:hover {
 #home .container .inner h3 {
   margin: 0px;
 }
+#home .container .sponsors {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: -35px;
+  width: 1024px;
+  height: 100px;
+  margin: 0 auto;
+  margin-top: -100px;
+}
+#home .container .sponsors .image {
+  width: 150px;
+  margin: 15px;
+}
+#home .container .sponsors .image img {
+  width: 150px;
+}
 #boka {
   transition: width 0.5s ease-in-out, height 0.5s ease-in-out, background 0.5s ease-in-out;
   margin: 0 auto;
@@ -415,6 +450,8 @@ nav ul li a:hover {
   transform: translate3d(-50%, -50%, 0);
   background: rgba(0, 0, 0, 0.4);
   padding: 20px;
+  margin-top: 100px;
+  margin-bottom: 100px;
   max-width: 1024px;
 }
 #turnering .container .inner .center {

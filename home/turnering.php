@@ -62,6 +62,16 @@
         </div>
       </div>
 
+      <div class="tournament_div">
+        <h3>Regler!</h3>
+        <p>
+          Vi har inte många regler, Men du kan inte fuska, scritpa eller använda något som skulle få dig en fördel i spelet. Ifall någon anses för fusk blir du discadd.<br><br>
+          Ifall ditt lag endast har 4 man på plats kan ni sätta in en extra som inte behöver va med på lanet.<br><br>
+          Var almänt trevlig och va inte en dålig förlorare.
+        </p>
+      </div>
+
+
     </div>
   </div>
 </div>

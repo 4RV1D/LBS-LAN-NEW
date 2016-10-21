@@ -13,6 +13,14 @@
    </head>
    <body>
      <div id="register-body">
+
+       <div class="sponsors">
+         <div class="image"><img src="../assets/img/strafe.png" alt="strafe" /></div>
+         <div class="image"><img src="../assets/img/invid.png" alt="invid" /></div>
+         <div class="image"><img src="../assets/img/skapa-reklam.png" alt="skapareklam" /></div>
+         <div class="image"><img src="../assets/img/publiclir.png" alt="publiclir" /></div>
+       </div>
+
        <div id="register">
          <div class="image">
            <div class="image-overlay">
